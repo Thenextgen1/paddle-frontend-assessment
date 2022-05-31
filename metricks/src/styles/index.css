@@ -1,0 +1,16 @@
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(178deg, #210045, #0C0123);
+    height: 100vh;
+}

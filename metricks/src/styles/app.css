@@ -1,0 +1,13 @@
+ul,
+li {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.app {
+    padding: 1.5em 4em;
+}

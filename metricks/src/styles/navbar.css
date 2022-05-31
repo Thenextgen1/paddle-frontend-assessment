@@ -1,0 +1,27 @@
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul li {
+    display: inline-block;
+    padding-right: 3em;
+}
+
+.nav ul li a {
+    text-transform: uppercase;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 0.8em;
+}
+
+.logo {
+    width: 100px;
+}
+
+.nav ul .contactus-link {
+    background-color: #271AC1;
+    padding: 10px 30px;
+    border-radius: 51px;
+}
