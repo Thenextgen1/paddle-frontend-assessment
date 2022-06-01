@@ -10,4 +10,11 @@ a {
 
 .app {
     padding: 1.5em 4em;
+    height: 100%;
+}
+
+body {
+    background: url(../assets/background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
 }

@@ -31,13 +31,15 @@ const Homepage = () => {
                 </div>
             </div>
             <div className='input-container'>
-                <input type="text" placeholder='First Name...' />
-                <input type="text" placeholder='Last Name...' />
+                <input type="text" placeholder='First Name..' />
+                <input type="text" placeholder='Last Name..' />
             </div>
-            <div>
-                <input type="text" placeholder='Enter your email address' />
-                <button>JOIN OUR WAITING LIST..</button>
-            </div>x
+            <div className='waitinglist-container'>
+                <input type="text" placeholder='Enter your email address...' />
+                <div>
+                    <button>JOIN OUR WAITING LIST..</button>
+                </div>
+            </div>
         </main>
     )
 }
