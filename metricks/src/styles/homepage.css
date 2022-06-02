@@ -124,3 +124,53 @@ button {
     color: #fff;
     font-size: 0.7em;
 }
+
+.circle-1 {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: transparent linear-gradient(177deg, #7F1E7B 0%, #19073B 100%) 0% 0% no-repeat padding-box;
+    -moz-border-radius: 40px;
+    -webkit-border-radius: 40px;
+    border-radius: 40px;
+    top: 15%;
+    left: 12%;
+}
+
+.circle-2 {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background: transparent linear-gradient(177deg, #213F72 0%, #19073B 100%) 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+    -moz-border-radius: 30px;
+    -webkit-border-radius: 30px;
+    top: 38%;
+    right: 23%;
+}
+
+.circle-3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background: transparent linear-gradient(177deg, #7F4129 0%, #1C0C28 100%) 0% 0% no-repeat padding-box;
+    left: 30%;
+    top: 90%;
+
+}
+
+.oval {
+    height: 850px;
+    width: 900px;
+    border-radius: 50%;
+    backdrop-filter: blur(4px);
+    background: #70707046;
+    border-top: 1px solid #707070;
+    position: absolute;
+    left: 15%;
+    top: 94%;
+    bottom: 0;
+}

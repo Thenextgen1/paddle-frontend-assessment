@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../styles/homepage.css'
+
 
 
 const Homepage = () => {
@@ -40,6 +41,14 @@ const Homepage = () => {
                     <button>JOIN OUR WAITING LIST..</button>
                 </div>
             </div>
+
+            <div className="shapes-container">
+                <div className='circle-1'></div>
+                <div className='circle-2'></div>
+                <div className='circle-3'></div>
+                <div className='oval'></div>
+            </div>
+
         </main>
     )
 }

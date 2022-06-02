@@ -1,20 +1,20 @@
+/* .footer {
+   
+} */
+
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
-}
-
-footer {
-    margin-top: 10em;
+    padding-top: 8em;
 }
 
 .policies {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 1.5em 0 2em 0;
+    padding: 1em 0 1.2em 0;
 }
 
 .policies p {
@@ -41,6 +41,7 @@ footer {
 
 .youtube {
     opacity: 1;
+    z-index: 1;
 }
 
 .copyright {

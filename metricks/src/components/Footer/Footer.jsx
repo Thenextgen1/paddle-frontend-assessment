@@ -10,7 +10,7 @@ import '../../styles/footer.css'
 
 const Footer = () => {
     return (
-        <footer classname="footer">
+        <footer className="footer">
             <div className='social-links-container'>
                 <IconContext.Provider value={{ className: 'youtube' }}>
                     <GrYoutube className='social-links' />
