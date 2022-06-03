@@ -1,9 +1,98 @@
-body {
-    background: none !important;
+h2 {
+    text-transform: uppercase;
+}
+
+.repo-card {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 4em;
+    margin-top: 3em;
+}
+
+.repo-card div p {
+    text-align: left;
+}
+
+.repo-card p {
+    font-size: 0.8em;
+    opacity: 0.7;
+}
+
+.repo-card img {
+    height: 200px;
+    width: 200px;
+    margin-right: 3em;
+}
+
+.repo-card-content {
+    width: 80%;
+}
+
+.repo-card-content .div {
+    display: flex;
+
+}
+
+.repo-card-content h2 {
+    margin: 1em 0 0.5em 0;
+    color: white;
+}
+
+.repo-card .statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1.3em;
+}
+
+.statistics .box {
+    border: 1px solid white;
+    padding: 5px;
+    opacity: 1;
+}
+
+.statistics div p {
+    display: inline-block;
+    margin-right: 1em;
+}
+
+.statistics div p a:visited {
+    color: saddlebrown;
 }
 
 
-p,
-h1 {
-    color: black
+@media(max-width: 520px) {
+    .repo-card {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .repo-card img {
+        margin-right: 0;
+    }
+
+    .repo-card-content {
+        width: 100%;
+    }
+
+    .repo-card-content h2,
+    .repo-card div p {
+        text-align: center;
+    }
+}
+
+@media(max-width: 350px) {
+    .statistics .box {
+        padding: 3px;
+    }
+
+
+    .statistics {
+        flex-direction: column;
+    }
+
+    .statistics div p {
+        margin-bottom: 1em;
+    }
 }
