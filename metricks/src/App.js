@@ -1,27 +1,26 @@
 import React from 'react';
-import { Navbar, Homepage, Footer } from './components';
+import { ComingSoon, About, Blog, Contact, Github } from './components';
 import './styles/app.css';
-import { Outlet } from 'react-router-dom';
-
-
-export const Layout = () => {
-    return (
-        <div className='app'>
-            <Navbar />
-            <Outlet />
-        </div>
-
-    )
-}
-
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const App = () => {
+
+
     return (
-        <div className='app'>
-            <Navbar />
-            <Homepage />
-            <Footer />
-        </div>
+
+        <Router >
+            <div className='app'>
+                <Routes>
+                    <Route path='/' element={<ComingSoon />} />
+                    <Route path='/about' element={<About />} />
+                    <Route path='/blog' element={<Blog />} />
+                    <Route path='/github' element={<Github />} />
+                    <Route path='/contact' element={<Contact />} />
+                </Routes>
+            </div>
+        </Router>
+
+
+
     )
 }
 

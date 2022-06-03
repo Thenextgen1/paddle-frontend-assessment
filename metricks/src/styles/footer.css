@@ -1,13 +1,10 @@
-/* .footer {
-   
-} */
-
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     padding-top: 8em;
+
 }
 
 .policies {
@@ -47,4 +44,25 @@
 .copyright {
     font-size: 0.8em;
     opacity: 0.6;
+}
+
+
+
+
+@media(max-width: 375px) {
+    .policies {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1em;
+    }
+
+    .policies p,
+    .copyright {
+        padding: 0;
+        font-size: 0.7em;
+    }
+
+    .copyright {
+        width: 80%;
+    }
 }

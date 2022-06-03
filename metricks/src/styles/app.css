@@ -10,10 +10,18 @@ a {
 
 .app {
     padding: 1.5em 4em;
-    overflow-y: hidden;
+    overflow-x: hidden;
 }
 
 body {
     background: transparent url(../assets/background.png) 0% 0% no-repeat padding-box;
     background-size: cover;
+    overflow-x: hidden;
+
+}
+
+@media(max-width: 1024px) {
+    .app {
+        padding: 1em 1.5em;
+    }
 }

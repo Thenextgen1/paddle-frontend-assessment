@@ -1,10 +1,15 @@
-import React from 'react'
-import '../../styles/blog.css'
+import React from 'react';
+import { Navbar, Footer } from '../../components';
+import '../../styles/blog.css';
 
 
 const Blog = () => {
     return (
-        <div>Blog</div>
+        <>
+            <Navbar />
+            <div>Blog</div>
+            <Footer />
+        </>
     )
 }
 

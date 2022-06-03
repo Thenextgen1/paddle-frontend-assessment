@@ -126,51 +126,134 @@ button {
 }
 
 .circle-1 {
-    position: absolute;
     width: 80px;
     height: 80px;
     background: transparent linear-gradient(177deg, #7F1E7B 0%, #19073B 100%) 0% 0% no-repeat padding-box;
     -moz-border-radius: 40px;
     -webkit-border-radius: 40px;
-    border-radius: 40px;
+    border-radius: 50%;
     top: 15%;
     left: 12%;
 }
 
 .circle-2 {
-    position: absolute;
     width: 60px;
     height: 60px;
     background: transparent linear-gradient(177deg, #213F72 0%, #19073B 100%) 0% 0% no-repeat padding-box;
-    border-radius: 30px;
+    border-radius: 50%;
     -moz-border-radius: 30px;
     -webkit-border-radius: 30px;
     top: 38%;
     right: 23%;
 }
 
+.circle-1,
+.circle-2,
 .circle-3 {
     position: absolute;
+    z-index: -1;
+
+}
+
+.circle-3 {
+
     width: 100px;
     height: 100px;
-    border-radius: 50px;
+    border-radius: 50%;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
     background: transparent linear-gradient(177deg, #7F4129 0%, #1C0C28 100%) 0% 0% no-repeat padding-box;
     left: 30%;
-    top: 90%;
+    top: 35em;
 
 }
 
-.oval {
-    height: 850px;
-    width: 900px;
-    border-radius: 50%;
-    backdrop-filter: blur(4px);
-    background: #70707046;
-    border-top: 1px solid #707070;
-    position: absolute;
-    left: 15%;
-    top: 94%;
-    bottom: 0;
+@media(max-width:1250px) {
+    .circle-3 {
+        left: 27%;
+    }
+}
+
+@media(max-width: 1024px) {
+    .circle-3 {
+        left: 25%;
+    }
+}
+
+@media(max-width: 960px) {
+    .circle-3 {
+        left: 20%;
+    }
+}
+
+@media(max-width: 768px) {
+    .circle-3 {
+        left: 15%;
+        top: 94%;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .input-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding-left: 0;
+    }
+
+    .homepage-showcase {
+        font-size: 0.6em;
+    }
+}
+
+
+
+@media(max-width: 425px) {
+    .waitinglist-container {
+        width: 320px;
+    }
+
+    .waitinglist-container button {
+        font-size: 0.6em;
+    }
+
+    .waitinglist-container div {
+        padding: 5px 10px;
+    }
+
+    .circle-3 {
+        width: 70px;
+        height: 70px;
+        left: 5%;
+        top: 100%;
+    }
+
+    .circle-2 {
+        width: 40px;
+        height: 40px;
+        right: 5%;
+    }
+
+    .circle-1 {
+        width: 60px;
+        height: 60px;
+        left: 5%;
+        top: 20%;
+    }
+
+}
+
+@media(max-width: 355px) {
+    .waitinglist-container {
+        flex-direction: column;
+        background: none;
+    }
+
+    .waitinglist-container input[type='text'] {
+        background: white;
+        margin-bottom: 1.5em;
+        padding: 10px 15px;
+        border-radius: 30px;
+    }
 }
