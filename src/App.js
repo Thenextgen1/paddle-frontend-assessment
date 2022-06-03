@@ -11,6 +11,7 @@ const App = () => {
             <div className='app'>
                 <Routes>
                     <Route path='/' element={<ComingSoon />} />
+                    <Route path='/comingsoon' element={<ComingSoon />} />
                     <Route path='/about' element={<About />} />
                     <Route path='/blog' element={<Blog />} />
                     <Route path='/github' element={<Github />} />

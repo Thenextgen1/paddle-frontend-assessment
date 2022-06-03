@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navbar, Footer } from '../../components';
-import '../../styles/homepage.css';
+import '../../styles/comingsoon.css';
 
 
 
