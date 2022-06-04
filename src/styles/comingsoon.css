@@ -68,7 +68,8 @@ h1 {
     padding: 2em 0 1.8em 0;
 }
 
-input::placeholder {
+input::placeholder,
+textarea::placeholder {
     font-family: 'Poppins', sans-serif;
 }
 
