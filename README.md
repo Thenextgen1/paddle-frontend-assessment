@@ -40,9 +40,10 @@ The following dependencies were required and used for the assessment:
 * Moment - Exracted and Parsed the date each repository was created, in the /github route, relative to the date set in the REST api.
 * React-Icons - Obtained specific icons from a collection of libraries.
 * React-Infinite-Scroll-Component - Used to implement infinite scroll in the /github route.
+* React-Reveal - Implemented certain animations in the coming soon and contact components.
 
 ## What can be improved about this application
 
 * For the blog page, a custom api which returns JSON data or CMS should be created to host the contents of the blog.
 * The coming soon component could use a real time animated counter.
-* For UI best practices a light and darkmode design of each page should be created with a custom button or switch to change styles to the desired mode.
+* For UI best practices a light and darkmode design of each page should be created with a custom button or switch to change styles to the desired mode. or render styles based on the specification by the OS.

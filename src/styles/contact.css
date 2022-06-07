@@ -1,10 +1,11 @@
 .contact-container {
     background: transparent linear-gradient(180deg, #210045 0%, #0C0123 100%) 0% 0% no-repeat padding-box;
-    padding: 2em 4em 6em 2em;
+    padding: 2em 4em 10em 2em;
     position: absolute;
+    z-index: 10;
     top: 0;
     right: 0;
-    height: 100vh;
+    height: 100%;
 }
 
 .form-field {
@@ -63,6 +64,7 @@ form button {
     font-size: 0.68em;
     border-radius: 30px;
     cursor: pointer;
+    margin-bottom: 1em;
     font-weight: 300;
 }
 
@@ -70,6 +72,7 @@ form h3 {
     text-align: center;
     color: white;
     font-weight: 400;
+    z-index: 10;
 }
 
 .arrow-right {
@@ -80,6 +83,7 @@ form h3 {
     padding: 10px;
     position: relative;
     left: -13%;
+    cursor: pointer;
 }
 
 .contact-circle {
@@ -92,8 +96,24 @@ form h3 {
     top: 26.5%;
     right: 30%;
     position: absolute;
+    z-index: -1;
 }
 
 .form-field input[type='text']:nth-of-type(1) {
     z-index: 10;
+}
+
+
+@media(max-width: 550px) {
+    .contact-container {
+        padding: 2em 2em 10em 2em;
+    }
+
+    .contact-circle {
+        right: 20%;
+    }
+
+    .arrow-right {
+        left: 0;
+    }
 }
