@@ -37,7 +37,7 @@ const Github = () => {
                 <p>{data.description}</p>
                 <div className='statistics'>
                     <div>
-                        <p className='box'><a href={data.html_url} alt="repo" target="_blank" rel="noreferrer">{millify(data.stargazers_count, {
+                        <p className='box'><a href={data.html_url} alt="stars" target="_blank" rel="noreferrer">{millify(data.stargazers_count, {
                             precision: 2
                         })} Stars</a></p>
                         <p className='box'><a href={data.html_url} alt="repo" target="_blank" rel="noreferrer">{data.open_issues} Issues</a></p>

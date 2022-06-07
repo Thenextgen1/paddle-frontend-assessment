@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Footer } from '../../components';
 import { IconContext } from "react-icons";
 import { BsArrowRightShort } from 'react-icons/bs';
+import Fade from 'react-reveal/Fade';
 import '../../styles/comingsoon.css';
 import '../../styles/contact.css';
 
@@ -13,11 +14,50 @@ const ComingSoon = () => {
         return e.preventDefault()
     }
 
+    const [contactSection, setcontactSection] = useState({
+        arrowClicked: false
+    })
+
+
+    const contactStyle = {
+        opacity: 0
+    }
+    const inputStyle = {
+        display: 'grid',
+        opacity: 1
+    }
+    function arrowClick() {
+        setcontactSection(prevcontactSection => {
+            return {
+                ...prevcontactSection,
+                arrowClicked: !contactSection.arrowClicked
+            }
+        })
+
+    }
+
+
+    function red() {
+        if (contactSection.arrowClicked) {
+            contactStyle.opacity = 1
+            contactStyle.display = 'block'
+            inputStyle.display = 'none'
+
+        }
+        else {
+            contactStyle.display = 'none'
+            inputStyle.display = 'grid'
+        }
+    }
+    red();
 
 
     return (
         <>
-            <Navbar />
+            <Navbar
+                setcontactSection={setcontactSection}
+                contactSection={contactSection}
+            />
             <main className='homepage'>
                 <h1>SOMETHING AWESOME IS <br />COMING SOON</h1>
                 <p className='homepage-showcase'>
@@ -44,16 +84,20 @@ const ComingSoon = () => {
                         <p>Second</p>
                     </div>
                 </div>
-                <div className='input-container'>
+
+                <div className='input-container' style={inputStyle}>
                     <input type="text" placeholder='First Name..' />
                     <input type="text" placeholder='Last Name..' />
                 </div>
-                <div className='waitinglist-container'>
-                    <input className='email' type="text" placeholder='Enter your email address...' />
-                    <div>
-                        <button>JOIN OUR WAITING LIST..</button>
+
+                <Fade bottom when={contactSection.arrowClicked}>
+                    <div className='waitinglist-container'>
+                        <input className='email' type="text" placeholder='Enter your email address...' />
+                        <div>
+                            <button>JOIN OUR WAITING LIST..</button>
+                        </div>
                     </div>
-                </div>
+                </Fade>
 
                 <div className="shapes-container">
                     <div className='circle-1'></div>
@@ -63,29 +107,32 @@ const ComingSoon = () => {
 
 
             </main>
-            <aside>
-                <div className='contact-container'>
-                    <IconContext.Provider value={{ className: 'arrow-right' }}>
-                        <BsArrowRightShort />
-                    </IconContext.Provider>
-                    <form onSubmit={handleSubmit}>
-                        <h3>Hey, we are still in the works, <br /> but you can send us a message!</h3>
-                        <fieldset className='form-field'>
-                            <label htmlFor='firstName'>First name</label>
-                            <input type="text" placeholder="Enter your first name" />
-                            <label htmlFor='lastName'>Last name</label>
-                            <input type="text" placeholder="Enter your Last name" />
-                            <label htmlFor='email'>Email address</label>
-                            <input type="text" placeholder="Enter your Email Address" />
-                            <label htmlFor='textArea'>Tell us what you need help with:</label>
-                            <textarea placeholder='Enter a topic, like "channel problem..."' rows="5" cols="52"></textarea>
-                        </fieldset>
-                        <button type='submit'>SEND NOW</button>
-                    </form>
-                    <div className='contact-circle'></div>
-                </div>
+            <Fade when={contactSection.arrowClicked}>
+                <aside className='contact-container' style={contactStyle}>
 
-            </aside>
+                    <div>
+                        <IconContext.Provider value={{ className: 'arrow-right' }}>
+                            <BsArrowRightShort onClick={arrowClick} />
+                        </IconContext.Provider>
+                        <form onSubmit={handleSubmit}>
+                            <h3>Hey, we are still in the works, <br /> but you can send us a message!</h3>
+                            <fieldset className='form-field'>
+                                <label htmlFor='firstName'>First name</label>
+                                <input type="text" placeholder="Enter your first name" />
+                                <label htmlFor='lastName'>Last name</label>
+                                <input type="text" placeholder="Enter your Last name" />
+                                <label htmlFor='email'>Email address</label>
+                                <input type="text" placeholder="Enter your Email Address" />
+                                <label htmlFor='textArea'>Tell us what you need help with:</label>
+                                <textarea placeholder='Enter a topic, like "channel problem..."' rows="5" cols="52"></textarea>
+                            </fieldset>
+                            <button type='submit'>SEND NOW</button>
+                        </form>
+                        <div className='contact-circle'></div>
+                    </div>
+
+                </aside>
+            </Fade>
             <Footer />
         </>
     )

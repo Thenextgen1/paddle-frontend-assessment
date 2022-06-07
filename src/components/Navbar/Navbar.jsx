@@ -5,7 +5,19 @@ import logo from '../../assets/logo.png'
 
 
 
-const Navbar = () => {
+const Navbar = ({ setcontactSection, contactSection }) => {
+
+
+    function handleClick() {
+        setcontactSection(prevcontactSection => {
+            return {
+                ...prevcontactSection,
+                arrowClicked: !contactSection.arrowClicked
+            }
+        })
+    }
+
+
     return (
         <header className='header'>
             <nav className='nav'>
@@ -18,8 +30,9 @@ const Navbar = () => {
                     <li>
                         <Link to="/blog">Blog</Link>
                     </li>
-                    <li className='contactus-link'>
-                        <Link to="/contact" >Contact Us</Link>
+                    <li className='contactus-link' onClick={handleClick}>
+
+                        <button href='#' alt="contact">Contact Us</button>
                     </li>
                 </ul>
             </nav>
