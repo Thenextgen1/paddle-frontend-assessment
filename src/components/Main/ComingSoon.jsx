@@ -90,7 +90,7 @@ const ComingSoon = () => {
                     <input type="text" placeholder='Last Name..' />
                 </div>
 
-                <Fade bottom when={contactSection.arrowClicked}>
+                <Fade bottom={contactSection.arrowClicked ? true : false} when={contactSection.arrowClicked ? true : null}>
                     <div className='waitinglist-container'>
                         <input className='email' type="text" placeholder='Enter your email address...' />
                         <div>
