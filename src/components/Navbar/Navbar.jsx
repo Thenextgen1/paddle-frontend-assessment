@@ -1,11 +1,15 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import '../../styles/navbar.css'
 import logo from '../../assets/logo.png'
 
 
 
 const Navbar = ({ setcontactSection, contactSection }) => {
+
+    const activeStyle = {
+        color: '#FF00F7'
+    }
 
 
     function handleClick() {
@@ -21,14 +25,18 @@ const Navbar = ({ setcontactSection, contactSection }) => {
     return (
         <header className='header'>
             <nav className='nav'>
-                <Link to="/"><img className='logo' src={logo} alt="logo" /></Link>
+                <NavLink to="/"><img className='logo' src={logo} alt="logo" /></NavLink>
 
                 <ul>
                     <li>
-                        <Link to="/about">About us</Link>
+                        <NavLink to="/about" style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                        }>About us</NavLink>
                     </li>
                     <li>
-                        <Link to="/blog">Blog</Link>
+                        <NavLink to="/blog" style={({ isActive }) =>
+                            isActive ? activeStyle : undefined
+                        }>Blog</NavLink>
                     </li>
                     <li className='contactus-link' onClick={handleClick}>
 
