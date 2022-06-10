@@ -10,17 +10,19 @@ const About = () => {
     <>
       <Navbar />
       <main className='about'>
-        <section>
-          <div>
-            <h4><span></span>ABOUT US</h4>
-            <h3>Built for SaaS and E-commerce</h3>
+        <section className='about-hero'>
+          <div className='about-hero-heading'>
+            <h3>ABOUT US</h3>
+
+            <h4>Built for SaaS <br /> and E-commerce</h4>
           </div>
-          <div>
+          <div className='about-hero-content'>
+            <div className='circle'></div>
             <p>Our tools are easy to set up and use with a user friendly dashboard that enables you to set up, launch, automate and manage multi-affiliate campaigns in 5 minutes.</p>
           </div>
         </section>
 
-        <section>
+        <section className='about-content'>
           <h3>Metricks was developed because just like you, we needed a product that could give us good value.</h3>
           <div>
             <div>
@@ -35,7 +37,7 @@ const About = () => {
           </div>
         </section>
 
-        <section>
+        <section className="about-query">
           <h5>Got a Question</h5>
           <p>See how Metricks can help your business grow with best Affiliate Marketing Tracking Software.</p>
           <Link to="/">Contact us</Link>
