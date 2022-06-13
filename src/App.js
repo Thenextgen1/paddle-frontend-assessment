@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComingSoon, About, Blog, Github } from './components';
-import './styles/app.css';
+import'./styles/app.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 const App = () => {
 
@@ -8,7 +8,7 @@ const App = () => {
     return (
 
         <Router >
-            <div className='app'>
+            <div className="app">
                 <Routes>
                     <Route path='/' element={<ComingSoon />} />
                     <Route path='/comingsoon' element={<ComingSoon />} />
