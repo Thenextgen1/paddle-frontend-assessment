@@ -22,9 +22,16 @@ const ComingSoon = () => {
     const contactStyle = {
         opacity: 0
     }
+    const footerStyle = {
+        paddingTop: '3em',
+        filter: ''
+    }
     const inputStyle = {
         display: 'grid',
         opacity: 1
+    }
+    const mainStyle = {
+        filter: ''
     }
     function arrowClick() {
         setcontactSection(prevcontactSection => {
@@ -42,23 +49,28 @@ const ComingSoon = () => {
             contactStyle.opacity = 1
             contactStyle.display = 'block'
             inputStyle.display = 'none'
-
+            mainStyle.filter = 'blur(10px)'
+            footerStyle.paddingTop = '2em'
+            footerStyle.filter = 'blur(10px)'
         }
         else {
             contactStyle.display = 'none'
             inputStyle.display = 'grid'
+            mainStyle.filter = ''
         }
     }
     red();
 
 
     return (
-        <>
-            <Navbar
-                setcontactSection={setcontactSection}
-                contactSection={contactSection}
-            />
-            <main className='homepage'>
+        <div className="comingsoon">
+            <div style={mainStyle}>
+                <Navbar
+                    setcontactSection={setcontactSection}
+                    contactSection={contactSection}
+                />
+            </div>
+            <main className='homepage' style={mainStyle}>
                 <h1>SOMETHING AWESOME IS <br />COMING SOON</h1>
                 <p className='homepage-showcase'>
                     <span>Your all-in-one affiliate marketing tracking software </span>
@@ -133,8 +145,10 @@ const ComingSoon = () => {
 
                 </aside>
             </Fade>
-            <Footer />
-        </>
+            <div style={footerStyle}>
+                <Footer />
+            </div>
+        </div>
     )
 }
 

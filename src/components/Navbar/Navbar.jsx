@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import '../../styles/navbar.css'
 import logo from '../../assets/logo.png'
 
@@ -12,7 +12,8 @@ const Navbar = ({ setcontactSection, contactSection }) => {
     }
 
 
-    function handleClick() {
+    function handleClick(e) {
+        e.preventDefault();
         setcontactSection(prevcontactSection => {
             return {
                 ...prevcontactSection,
@@ -39,8 +40,7 @@ const Navbar = ({ setcontactSection, contactSection }) => {
                         }>Blog</NavLink>
                     </li>
                     <li className='contactus-link' onClick={handleClick}>
-
-                        <button href='#' alt="contact">Contact Us</button>
+                        <Link to="/" alt="contact">Contact Us</Link>
                     </li>
                 </ul>
             </nav>
