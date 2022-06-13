@@ -109,7 +109,10 @@ button {
     align-items: center;
     width: 380px;
     margin-top: 1.8em;
+
 }
+
+
 
 .waitinglist-container input::placeholder {
     color: #000000;
@@ -176,29 +179,26 @@ button {
     opacity: 1 !important;
 }
 
+
+@media(max-width: 1340px) {
+    .comingsoon {
+        height: 100vh;
+    }
+}
+
 @media(max-width:1250px) {
+
+    .circle-1,
+    .circle-2,
     .circle-3 {
-        left: 27%;
+        display: none;
     }
 }
 
-@media(max-width: 1024px) {
-    .circle-3 {
-        left: 25%;
-    }
-}
 
-@media(max-width: 960px) {
-    .circle-3 {
-        left: 20%;
-    }
-}
 
 @media(max-width: 768px) {
-    .circle-3 {
-        left: 15%;
-        top: 94%;
-    }
+
 
     h1 {
         font-size: 1.2em;
@@ -230,25 +230,6 @@ button {
         padding: 5px 10px;
     }
 
-    .circle-3 {
-        width: 70px;
-        height: 70px;
-        left: 5%;
-        top: 100%;
-    }
-
-    .circle-2 {
-        width: 40px;
-        height: 40px;
-        right: 5%;
-    }
-
-    .circle-1 {
-        width: 60px;
-        height: 60px;
-        left: 5%;
-        top: 20%;
-    }
 
 }
 
