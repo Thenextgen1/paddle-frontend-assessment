@@ -1,48 +1,118 @@
 import React from 'react';
-import { Navbar, Footer } from '../../components';
-import { dataSet } from '../../services/data';
+import { Footer } from '../../components';
+import { IconContext } from "react-icons";
+import { BiSearch } from 'react-icons/bi'
+import darkLogo from '../../assets/metricks-logo-dark-removebg-preview.png'
+import { NavLink, Link } from "react-router-dom";
+import { dataSet, articleset } from '../../services/data';
 import '../../styles/blog.css';
 
 
 const Blog = () => {
 
-    const blogData = dataSet.map((data) => (
-        <div id={data.id}>
+
+    const activeStyle = {
+        color: '#FF00F7'
+    }
+
+
+    const blogData = dataSet.map((data, i) => (
+        <div key={i} className="blog-card">
             <img src={data.image} alt="post" />
-            <h5>{data.datePosted}</h5>
-            <h4>{data.heading}</h4>
+            <h4>{data.datePosted}</h4>
+            <h5>{data.heading}</h5>
+            <h5>{data.subHeading}</h5>
+            <p>{data.content}</p>
+            <p>READ MORE</p>
+        </div>
+    ))
+
+    const articleData = articleset.map((data, i) => (
+        <div key={i} className="article-card">
+            <h4>{data.datePosted}</h4>
+            <h5>{data.heading}</h5>
             <p>{data.content}</p>
             <p>READ MORE</p>
         </div>
     ))
 
 
-
     return (
         <>
-            <Navbar />
-            <main>
-                <section>
-                    <h3>BLOG</h3>
-                    <h3>Articles and News</h3>
+            <header className="navbar-container">
+                <nav className='nav'>
+                    <NavLink to="/"><img className='logo' src={darkLogo} alt="logo" /></NavLink>
 
-                </section>
-                <section>
+                    <ul>
+                        <li>
+                            <NavLink to="/about" style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }>About us</NavLink>
+                        </li>
+                        <li>
+                            <NavLink to="/blog" style={({ isActive }) =>
+                                isActive ? activeStyle : undefined
+                            }>Blog</NavLink>
+                        </li>
+                        <li className='contactus-link'>
+                            <Link to="/" alt="contact" setcontactSection={null}>Contact Us</Link>
+                        </li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <section className='blog-hero'>
                     <div>
-                        <h4>Latest From The Blog</h4>
-                        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+                        <h3>BLOG</h3>
+                        <h4>Articles and News</h4>
+                    </div>
+                </section>
+                <section className="blog-post">
+                    <div className='blog-post-heading'>
                         <div>
-                            <input type="search" placeholder="Search here" />
+                            <h4>Latest From The Blog</h4>
+                            <p style={{ color: 'black' }} >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br className="linebreak2" /> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam</p>
+                        </div>
+
+                        <div className='blog-search'>
+                            <input type="text" placeholder="Search here" />
+                            <IconContext.Provider value={{ className: 'youtube' }}>
+                                <BiSearch className='search' />
+                            </IconContext.Provider>
                         </div>
                     </div>
+                    <div className='blog-card-container'>
+                        {blogData}
+                    </div>
 
-                    {blogData}
+
                 </section>
-
-
-
             </main>
-            <Footer />
+            <article className='article'>
+                <h4>Recent Articles</h4>
+                <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam <br /> nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam </p>
+                <div className='article-card-container'>
+                    {articleData}
+                </div>
+                <button className='load-more'>LOAD MORE</button>
+            </article>
+
+            <aside className="faqs">
+                <div>
+                    <h4>What To Know More About Metrics ?</h4>
+                    <p>Learn who we are and what drives us</p>
+                    <p>Contact Us</p>
+                </div>
+                <div className='faqs-square-container'>
+                    <div className='faqs-square'></div>
+                </div>
+            </aside>
+
+
+
+            <div className='footer-container'>
+                <Footer />
+            </div>
         </>
     )
 }
