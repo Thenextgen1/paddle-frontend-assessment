@@ -18,8 +18,10 @@ a {
 }
 
 body {
-    background: transparent url(../assets/background.png) 0% 0% no-repeat padding-box;
-    background-size: cover;
+    background: #1F0042 0% 0% no-repeat padding-box;
+    ;
+    /* background: transparent url(../assets/background.png) 0% 0% no-repeat padding-box;
+    background-size: 100% 100%; */
     overflow-x: hidden;
 
 }
